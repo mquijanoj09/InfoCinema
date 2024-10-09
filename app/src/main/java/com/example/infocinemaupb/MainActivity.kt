@@ -1,47 +1,44 @@
 package com.example.infocinemaupb
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.infocinemaupb.ui.theme.InfoCinemaTheme
+import android.widget.TextView
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            InfoCinemaTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        // Configurar la navegación de cada opción
+        val inicioTextView: TextView = findViewById(R.id.nav_inicio)
+        val top10TextView: TextView = findViewById(R.id.nav_top_10)
+        val filtrosTextView: TextView = findViewById(R.id.nav_filtros)
+        val creditosTextView: TextView = findViewById(R.id.nav_creditos)
+
+        // Navegar a InicioActivity cuando se haga clic en "Inicio"
+        inicioTextView.setOnClickListener {
+            val intent = Intent(this, InicioActivity::class.java)
+            startActivity(intent)
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // Navegar a Top10Activity cuando se haga clic en "top 10"
+        top10TextView.setOnClickListener {
+            val intent = Intent(this, Top10Activity::class.java)
+            startActivity(intent)
+        }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    InfoCinemaTheme {
-        Greeting("Android")
+        // Navegar a FiltrosActivity cuando se haga clic en "filtros"
+        filtrosTextView.setOnClickListener {
+            val intent = Intent(this, FiltrosActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navegar a CreditosActivity cuando se haga clic en "creditos"
+        creditosTextView.setOnClickListener {
+            val intent = Intent(this, CreditosActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

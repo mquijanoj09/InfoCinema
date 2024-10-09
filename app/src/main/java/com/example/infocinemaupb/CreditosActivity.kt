@@ -1,4 +1,4 @@
-package com.example.infocinema
+package com.example.infocinemaupb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
