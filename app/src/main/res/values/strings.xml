@@ -1,3 +1,12 @@
+<!-- res/values/strings.xml -->
 <resources>
     <string name="app_name">InfoCinema</string>
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_top_10">Top 10</string>
+    <string name="nav_filtros">Filtros</string>
+    <string name="nav_creditos">Créditos</string>
+    <string name="estrenos_semana">Estrenos de esta semana</string>
+    <string name="top_10_today">Las 10 más populares de hoy</string>
+    <string name="explore_genero">Explora por género</string>
+    <!-- Add more strings as needed -->
 </resources>
