@@ -1,44 +1,30 @@
 package com.example.infocinemaupb
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.os.Handler
+import android.os.Looper
+import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var logoSection: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Configurar la navegación de cada opción
-        val inicioTextView: TextView = findViewById(R.id.nav_inicio)
-        val top10TextView: TextView = findViewById(R.id.nav_top_10)
-        val filtrosTextView: TextView = findViewById(R.id.nav_filtros)
-        val creditosTextView: TextView = findViewById(R.id.nav_creditos)
+        // Initializing views
+        logoSection = findViewById(R.id.logo_section)
 
-        // Navegar a InicioActivity cuando se haga clic en "Inicio"
-        inicioTextView.setOnClickListener {
+        // Delay transition to InicioActivity after 3 seconds
+        Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, InicioActivity::class.java)
             startActivity(intent)
-        }
-
-        // Navegar a Top10Activity cuando se haga clic en "top 10"
-        top10TextView.setOnClickListener {
-            val intent = Intent(this, Top10Activity::class.java)
-            startActivity(intent)
-        }
-
-        // Navegar a FiltrosActivity cuando se haga clic en "filtros"
-        filtrosTextView.setOnClickListener {
-            val intent = Intent(this, FiltrosActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Navegar a CreditosActivity cuando se haga clic en "creditos"
-        creditosTextView.setOnClickListener {
-            val intent = Intent(this, CreditosActivity::class.java)
-            startActivity(intent)
-        }
+            finish() // Finish the MainActivity
+        }, 3000)
     }
 }
+

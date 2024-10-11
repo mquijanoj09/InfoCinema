@@ -82,32 +82,17 @@
             android:padding="16dp" />
     </LinearLayout>
 
-    <!-- Title: Las 10 más populares de hoy -->
-    <TextView
-        android:id="@+id/top_10_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Las 10 más populares de hoy"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/purple"
-        app:layout_constraintTop_toBottomOf="@id/nav_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center" />
-
     <!-- Two Column Layout for Top Movies -->
 
     <GridLayout
         android:id="@+id/top_movies_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_margin="32dp"
         android:columnCount="2"
         android:rowCount="5"
-        app:layout_constraintTop_toBottomOf="@id/top_10_title"
+        app:layout_constraintTop_toBottomOf="@id/nav_bar"
         tools:layout_editor_absoluteX="16dp">
 
         <LinearLayout

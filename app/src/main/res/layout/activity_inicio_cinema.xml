@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nav_inicio"
             android:textColor="@color/purple"
+            android:textStyle="bold"
             android:padding="16dp" />
 
         <TextView
@@ -60,8 +61,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nav_top_10"
             android:textColor="@color/purple"
-            android:padding="16dp"
-            android:textStyle="bold"/>
+            android:padding="16dp"/>
 
         <TextView
             android:id="@+id/nav_filtros"
@@ -119,7 +119,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="30dp"
             android:background="@android:color/darker_gray" />
 
         <ImageView
@@ -128,22 +128,16 @@
             android:layout_height="100dp"
             android:background="@android:color/darker_gray"
             android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="30dp" />
 
         <ImageView
             android:id="@+id/estreno_3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginEnd="8dp"
             android:background="@android:color/darker_gray"
-            android:layout_marginEnd="8dp" />
+            android:src="@drawable/ic_launcher_foreground" />
 
-        <ImageView
-            android:id="@+id/estreno_4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:background="@android:color/darker_gray" />
     </LinearLayout>
 
     <!-- Section: Las 10 más populares de hoy -->
