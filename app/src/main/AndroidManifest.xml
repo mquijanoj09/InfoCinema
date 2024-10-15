@@ -9,18 +9,19 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".MovieInfoActivity"
+            android:exported="false" />
         <!-- Actividad principal -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Otras actividades -->
+        </activity> <!-- Otras actividades -->
         <activity
             android:name=".InicioActivity"
             android:exported="false" />
@@ -33,6 +34,6 @@
         <activity
             android:name=".Top10Activity"
             android:exported="false" />
-
     </application>
+
 </manifest>

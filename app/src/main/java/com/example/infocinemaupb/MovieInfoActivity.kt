@@ -1,27 +1,24 @@
 package com.example.infocinemaupb
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 
-class FiltrosActivity : AppCompatActivity() {
+class MovieInfoActivity : AppCompatActivity() {
 
     private lateinit var logoSection: ImageView
     private lateinit var navInicio: TextView
     private lateinit var navTop10: TextView
     private lateinit var navFiltros: TextView
     private lateinit var navCreditos: TextView
-    private lateinit var navInfo: LinearLayout
-    private lateinit var navInfo2: LinearLayout
-    private lateinit var navInfo3: LinearLayout
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_filtros)
+        setContentView(R.layout.activity_movie_info)
 
         // Inicializa los elementos de la interfaz
         logoSection = findViewById(R.id.logo)
@@ -29,9 +26,6 @@ class FiltrosActivity : AppCompatActivity() {
         navTop10 = findViewById(R.id.nav_top_10)
         navFiltros = findViewById(R.id.nav_filtros)
         navCreditos = findViewById(R.id.nav_creditos)
-        navInfo = findViewById(R.id.puntuacion_movies)
-        navInfo2 = findViewById(R.id.movies_2000)
-        navInfo3 = findViewById(R.id.emma_watson_movies)
 
 
         // Configura las acciones de los elementos
@@ -53,21 +47,6 @@ class FiltrosActivity : AppCompatActivity() {
         navCreditos.setOnClickListener {
             // Lógica para la navegación a créditos
             startActivity(Intent(this, CreditosActivity::class.java))
-        }
-
-        navInfo.setOnClickListener {
-            // Lógica para la navegación a créditos
-            startActivity(Intent(this, MovieInfoActivity::class.java))
-        }
-
-        navInfo2.setOnClickListener {
-            // Lógica para la navegación a créditos
-            startActivity(Intent(this, MovieInfoActivity::class.java))
-        }
-
-        navInfo3.setOnClickListener {
-            // Lógica para la navegación a créditos
-            startActivity(Intent(this, MovieInfoActivity::class.java))
         }
     }
 }

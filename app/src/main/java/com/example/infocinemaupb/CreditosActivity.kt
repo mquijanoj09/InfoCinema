@@ -3,6 +3,7 @@ package com.example.infocinemaupb
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -13,6 +14,7 @@ class CreditosActivity : AppCompatActivity() {
     private lateinit var navTop10: TextView
     private lateinit var navFiltros: TextView
     private lateinit var navCreditos: TextView
+    private lateinit var cerrarApp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class CreditosActivity : AppCompatActivity() {
         navTop10 = findViewById(R.id.nav_top_10)
         navFiltros = findViewById(R.id.nav_filtros)
         navCreditos = findViewById(R.id.nav_creditos)
+        cerrarApp = findViewById(R.id.close_button)
 
         // Configura las acciones de los elementos
         navInicio.setOnClickListener {
@@ -44,6 +47,10 @@ class CreditosActivity : AppCompatActivity() {
         navCreditos.setOnClickListener {
             // Lógica para la navegación a créditos
             startActivity(Intent(this, CreditosActivity::class.java))
+        }
+
+        cerrarApp.setOnClickListener {
+            finishAffinity()
         }
     }
 }

@@ -3,7 +3,9 @@ package com.example.infocinemaupb
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.GridLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 
 class Top10Activity : AppCompatActivity() {
@@ -13,6 +15,7 @@ class Top10Activity : AppCompatActivity() {
     private lateinit var navTop10: TextView
     private lateinit var navFiltros: TextView
     private lateinit var navCreditos: TextView
+    private lateinit var navMovieInfo: GridLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +27,7 @@ class Top10Activity : AppCompatActivity() {
         navTop10 = findViewById(R.id.nav_top_10)
         navFiltros = findViewById(R.id.nav_filtros)
         navCreditos = findViewById(R.id.nav_creditos)
+        navMovieInfo = findViewById(R.id.top_movies_grid)
 
         // Configura las acciones de los elementos
         navInicio.setOnClickListener {
@@ -44,6 +48,11 @@ class Top10Activity : AppCompatActivity() {
         navCreditos.setOnClickListener {
             // Lógica para la navegación a créditos
             startActivity(Intent(this, CreditosActivity::class.java))
+        }
+
+        navMovieInfo.setOnClickListener {
+            // Lógica para la navegación a créditos
+            startActivity(Intent(this, MovieInfoActivity::class.java))
         }
     }
 }
