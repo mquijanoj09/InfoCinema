@@ -4,18 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#F8F8F8">
+    android:padding="16dp">
 
     <!-- Logo and App Title Section -->
+
     <LinearLayout
         android:id="@+id/logo_section"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical">
 
         <ImageView
             android:id="@+id/logo"
@@ -30,7 +30,7 @@
             android:text="@string/app_name"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
@@ -46,12 +46,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Nav Items -->
         <TextView
             android:id="@+id/nav_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_inicio"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
 
         <TextView
@@ -59,15 +60,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_top_10"
-            android:textColor="@color/purple"
-            android:padding="16dp" />
+            android:textColor="@color/white"
+            android:padding="16dp"/>
 
         <TextView
             android:id="@+id/nav_filtros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_filtros"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:padding="16dp" />
 
@@ -76,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_creditos"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
     </LinearLayout>
 
@@ -85,112 +86,159 @@
         android:id="@+id/explore_genero_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explore_genero"
-        android:textStyle="bold"
-        android:textSize="18sp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/nav_bar"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/explore_genero"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nav_bar" />
 
     <LinearLayout
         android:id="@+id/explore_genero"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_width="366dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/explore_genero_title"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/explore_genero_title">
 
         <Button
             android:id="@+id/genre_terror"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Terror"
+
+            android:layout_marginStart="4dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp" />
+            android:background="@drawable/button_border"
+            android:text="Terror"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/genre_comedia"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Comedia"
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp" />
+            android:background="@drawable/button_border"
+            android:text="Comedia"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/genre_ficcion"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Ficción"
-            android:layout_weight="1" />
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_border"
+            android:text="Ficcion"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
     <!-- Section: Recommended Movies -->
+
     <TextView
         android:id="@+id/puntuacion_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Explora por puntuación"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/explore_genero"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Explora por puntuación"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/explore_genero" />
 
-    <LinearLayout
-        android:id="@+id/puntuacion_movies"
+    <!-- Section: Upcoming Releases -->
+    <HorizontalScrollView
         android:layout_width="0dp"
+        android:id="@+id/scroll_horizontal"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/puntuacion_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp">
-
-        <ImageView
-            android:id="@+id/movie_recommended1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+    <LinearLayout
+        android:id="@+id/puntuacion_movies"
+        android:layout_width="462dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scroll_horizontal">
 
         <ImageView
             android:id="@+id/movie_recommended2"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
             android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/top10" />
+
+        <ImageView
+            android:id="@+id/movie_recommended1"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top1" />
+
+        <ImageView
+            android:id="@+id/movie_recommended4"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top4" />
 
         <ImageView
             android:id="@+id/movie_recommended3"
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="30dp"
             android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
-    </LinearLayout>
+            android:scaleType="centerCrop"
+            android:src="@drawable/top8" />
 
-    <!-- Section: Upcoming Releases -->
+    </LinearLayout>
+    </HorizontalScrollView>
+
     <TextView
         android:id="@+id/movies_2000_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Películas de los 2000"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/puntuacion_movies"
+        app:layout_constraintTop_toBottomOf="@id/scroll_horizontal"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:id="@+id/scroll_horizontal2"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movies_2000_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
     <LinearLayout
         android:id="@+id/movies_2000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/movies_2000_title"
+        app:layout_constraintTop_toBottomOf="@id/scroll_horizontal2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp">
@@ -198,26 +246,34 @@
         <ImageView
             android:id="@+id/movie_upcoming1"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/peli2001" />
 
         <ImageView
             android:id="@+id/movie_upcoming2"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/peli2002" />
 
         <ImageView
-            android:id="@+id/movie_upcoming3"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/peli2003" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/peli2004" />
     </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- Section: Upcoming Releases -->
     <TextView
@@ -225,18 +281,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emma Watson"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/movies_2000"
+        app:layout_constraintTop_toBottomOf="@id/scroll_horizontal2"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:id="@+id/scroll_horizontal3"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/emma_watson_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
     <LinearLayout
         android:id="@+id/emma_watson_movies"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/emma_watson_title"
+        app:layout_constraintTop_toBottomOf="@id/scroll_horizontal3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp">
@@ -244,25 +309,35 @@
         <ImageView
             android:id="@+id/emma_watson"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/emma1" />
 
         <ImageView
             android:id="@+id/emma_watson_2"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/emma4" />
 
         <ImageView
             android:id="@+id/emma_watson_3"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/emma3" />
+
+        <ImageView
+            android:id="@+id/emma_watson_4"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/emma2" />
     </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

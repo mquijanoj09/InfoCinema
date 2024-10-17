@@ -29,7 +29,7 @@
             android:text="@string/app_name"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_inicio"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:padding="16dp" />
 
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_top_10"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp"/>
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_filtros"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
 
         <TextView
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_creditos"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
     </LinearLayout>
 
@@ -89,7 +89,8 @@
         app:layout_constraintTop_toBottomOf="@id/nav_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_launcher_foreground"
+        android:src="@drawable/buscandonemo"
+        android:scaleType="centerCrop"
         android:layout_marginTop="16dp" />
 
     <!-- Section: Estrenos de esta semana -->
@@ -99,8 +100,9 @@
         android:layout_height="wrap_content"
         android:text="@string/estrenos_semana"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/featured_movie"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -116,27 +118,30 @@
 
         <ImageView
             android:id="@+id/estreno_1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray" />
-
-        <ImageView
-            android:id="@+id/estreno_2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_marginEnd="30dp" />
-
-        <ImageView
-            android:id="@+id/estreno_3"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_marginEnd="8dp"
             android:background="@android:color/darker_gray"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/top10" />
+
+        <ImageView
+            android:id="@+id/estreno_2"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/darker_gray"
+            android:src="@drawable/estreno2"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/estreno_3"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="5dp"
+            android:scaleType="centerCrop"
+            android:background="@android:color/darker_gray"
+            android:src="@drawable/estreno3" />
 
     </LinearLayout>
 
@@ -147,8 +152,9 @@
         android:layout_height="wrap_content"
         android:text="@string/top_10_today"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/estrenos_semana"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -183,17 +189,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_1_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top1"
                 android:layout_marginStart="4dp"
+                android:scaleType="centerCrop"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
@@ -209,17 +216,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_2_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top2"
                 android:layout_marginStart="4dp"
+                android:scaleType="centerCrop"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
@@ -235,17 +243,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_3_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top3"
                 android:layout_marginStart="4dp"
+                android:scaleType="centerCrop"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
 
@@ -260,17 +269,18 @@
                 android:id="@+id/top_4_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="4"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
-                android:textStyle="bold"
-                android:layout_gravity="center" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/top_4_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top4"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -287,16 +297,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_5_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top5"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -313,16 +324,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_6_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top6"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -339,16 +351,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_7_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top7"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -365,16 +378,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_8_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top8"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -391,16 +405,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_9_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top9"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -416,16 +431,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
 
             <ImageView
                 android:id="@+id/top_10_image"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/top10"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="4dp"
                 android:background="@android:color/darker_gray" />
         </LinearLayout>
@@ -441,8 +457,9 @@
         android:layout_height="wrap_content"
         android:text="@string/explore_genero"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/top_10_today_horizontal"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -460,24 +477,32 @@
         <Button
             android:id="@+id/genre_terror"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:text="Terror"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_border"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/genre_comedia"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:text="Comedia"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_border"
+            android:textColor="#FFFFFF"/>
 
         <Button
             android:id="@+id/genre_ficcion"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:text="Ficción"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_border"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@android:color/white"
     tools:context=".MovieInfoActivity">
 
     <!-- Logo and App Title Section -->
+
     <LinearLayout
         android:id="@+id/logo_section"
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:text="@string/app_name"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
@@ -49,12 +49,13 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Nav Items -->
+        <!-- Nav Items -->
         <TextView
             android:id="@+id/nav_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_inicio"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
 
         <TextView
@@ -62,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_top_10"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp"/>
 
         <TextView
@@ -70,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_filtros"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
 
         <TextView
@@ -78,59 +79,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/nav_creditos"
-            android:textColor="@color/purple"
+            android:textColor="@color/white"
             android:padding="16dp" />
     </LinearLayout>
+
 
     <!-- Imagen de la película -->
     <ImageView
         android:id="@+id/imagenPelicula"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_width="364dp"
+        android:layout_height="217dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/nav_bar"
+        android:scaleType="centerCrop"
+        android:src="@drawable/buscandonemo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/nav_bar" />
 
     <!-- Título y detalles de la película -->
+
     <TextView
         android:id="@+id/tituloPelicula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:text="Buscando a Nemo"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/imagenPelicula"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagenPelicula" />
 
     <LinearLayout
         android:id="@+id/detallesPelicula"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tituloPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tituloPelicula">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:text="14 Julio 2020" />
+            android:text="14 Julio 2020"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:text="Acción" />
+            android:text="Acción"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1h 30 min" />
+            android:text="1h 30 min"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <!-- Estrellas de calificación -->
@@ -142,87 +152,118 @@
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/detallesPelicula"
         app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_star" />
     </LinearLayout>
 
-    <!-- Descripción -->
+    <!-- Plataformas disponibles -->
+
     <TextView
         android:id="@+id/descripcionPelicula"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="En esta encantadora aventura submarina, un pez payaso llamado Marlin emprende una increíble odisea a través del vasto océano para rescatar a su hijo, Nemo, que ha sido capturado por un buzo..."
-        app:layout_constraintTop_toBottomOf="@id/estrellasCalificacion"
+        android:layout_width="364dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="44dp"
+        android:text="La aventura de un pez payaso llamado Marlin, que emprende un emocionante viaje a través del océano para rescatar a su hijo Nemo, quien ha sido capturado por un buceador. En su travesía, Marlin es acompañado por Dory, una simpática pez con problemas de memoria. La película combina acción, humor y momentos conmovedores, explorando temas de amistad, valentía y la relación entre padres e hijos...."
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/estrellasCalificacion" />
 
-    <!-- Plataformas disponibles -->
     <TextView
         android:id="@+id/disponibleEn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:text="Disponible en:"
-        app:layout_constraintTop_toBottomOf="@id/descripcionPelicula"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descripcionPelicula" />
 
     <LinearLayout
         android:id="@+id/plataformas"
-        android:layout_width="0dp"
+        android:layout_width="361dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/disponibleEn">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/netflix" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/amazon" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/max" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/paramount" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/disney" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/disponibleEn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/detallesPelicula"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray" />
-
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="450dp"/>
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray" />
-
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="450dp"/>
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray" />
-
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="450dp"/>
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/darker_gray" />
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="450dp"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_star"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="450dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
