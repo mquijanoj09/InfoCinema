@@ -5,16 +5,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 
-class MovieInfoActivity : AppCompatActivity() {
+class MovieInfoActivity() : AppCompatActivity() {
 
     private lateinit var logoSection: ImageView
     private lateinit var navInicio: TextView
     private lateinit var navTop10: TextView
     private lateinit var navFiltros: TextView
     private lateinit var navCreditos: TextView
+    private lateinit var navBack: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,7 @@ class MovieInfoActivity : AppCompatActivity() {
         navTop10 = findViewById(R.id.nav_top_10)
         navFiltros = findViewById(R.id.nav_filtros)
         navCreditos = findViewById(R.id.nav_creditos)
+        navBack = findViewById(R.id.back)
 
 
         // Configura las acciones de los elementos
@@ -47,6 +50,11 @@ class MovieInfoActivity : AppCompatActivity() {
         navCreditos.setOnClickListener {
             // Lógica para la navegación a créditos
             startActivity(Intent(this, CreditosActivity::class.java))
+        }
+
+        navBack.setOnClickListener {
+            // Lógica para la navegación a créditos
+            startActivity(Intent(this, InicioActivity::class.java))
         }
     }
 }
